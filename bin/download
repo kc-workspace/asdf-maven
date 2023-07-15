@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+## Download the source code or binary for a specific version of a tool
+## to a specified location.
+## https://asdf-vm.com/plugins/create.html#bin-download
+
+## -----------------------
+## Customization functions
+
+# kc_asdf_main() {
+#   return 0
+# }
+
+## Custom logic to update checksum file
+_kc_asdf_custom_checksum() {
+  ## create function (create "<filename>" "[<checksum>]")
+  local create="$1"
+  ## filename is app file to check
+  local filename="$2"
+  ## checksum_tmp is a raw checksum file from url
+  local checksum_tmp="$3"
+
+  "$create" "$filename" "$(cat "$checksum_tmp")"
+}
+
+## -----------------------
+
+set -euo pipefail
+
+export KC_ASDF_PLUGIN_ENTRY_PATH=${BASH_SOURCE[0]}
+export KC_ASDF_PLUGIN_ENTRY_NAME
+KC_ASDF_PLUGIN_ENTRY_NAME="$(basename "$KC_ASDF_PLUGIN_ENTRY_PATH")"
+export KC_ASDF_PLUGIN_PATH
+KC_ASDF_PLUGIN_PATH=$(dirname "$(dirname "$KC_ASDF_PLUGIN_ENTRY_PATH")")
+
+# shellcheck source-path=SCRIPTDIR/../lib/commands.sh
+source "$KC_ASDF_PLUGIN_PATH/lib/commands.sh" "$@"
