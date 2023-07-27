@@ -1,6 +1,6 @@
 ---
 ## Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: v2.0.2
+_commit: v2.1.1
 _src_path: gh:kc-workspace/asdf-plugin-template.git
 addon_yaml:
     archive: true
@@ -34,7 +34,9 @@ custom_non_stable_version: (-src|-dev|-latest|-stm|[-\.]rc|-alpha|-beta|[-\.]pre
 custom_require_commands: java
 download_url: https://downloads.apache.org/maven/maven-{major_version}/{version}/binaries/apache-maven-{version}-bin.tar.gz
 gpg_enabled: true
-gpg_fingerprint: 6A814B1F869C2BBEAB7CB7271A2A1C94BDE89688
+gpg_public_key_email: ''
+gpg_public_key_fingerprint: 6A814B1F869C2BBEAB7CB7271A2A1C94BDE89688
+gpg_public_key_keyid: ''
 gpg_public_key_link: https://downloads.apache.org/maven/KEYS
 gpg_public_key_type: link
 gpg_sig_url: https://downloads.apache.org/maven/maven-{major_version}/{version}/binaries/apache-maven-{version}-bin.tar.gz.asc
@@ -45,6 +47,17 @@ plugin_name: asdf-maven
 plugin_org: kc-workspace
 plugin_repo: https://github.com/kc-workspace/asdf-maven.git
 source_enabled: false
+sys_arch_yaml:
+    aarch64*: arm64
+    armv5*: armv5
+    armv6*: armv6
+    armv7*: armv7
+    i386: '386'
+    i686: '386'
+    powerpc64le: ppc64le
+    ppc64le: ppc64le
+    x86: '386'
+    x86_64: amd64
 test_cmd_args: --version
 version_file_enabled: false
 version_prefix: maven-

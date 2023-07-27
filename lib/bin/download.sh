@@ -26,8 +26,9 @@ __asdf_bin() {
   local tmpdir tmpfile tmppath
   tmpdir="$(kc_asdf_temp_dir)"
   local vars=("version=$version")
-  [ -n "${KC_ASDF_OS:-}" ] && vars+=("os=${KC_ASDF_OS:-}")
-  [ -n "${KC_ASDF_ARCH:-}" ] && vars+=("arch=${KC_ASDF_ARCH:-}")
+  [ -n "${KC_ASDF_OS:-}" ] && vars+=("os=$KC_ASDF_OS")
+  [ -n "${KC_ASDF_ARCH:-}" ] && vars+=("arch=$KC_ASDF_ARCH")
+  [ -n "${KC_ASDF_EXT:-}" ] && vars+=("ext=$KC_ASDF_EXT")
   if command -v kc_asdf_version_parser >/dev/null; then
     local major minor patch
     read -r major minor patch <<<"$(kc_asdf_version_parser "$version")"
@@ -92,7 +93,8 @@ __asdf_bin() {
     if kc_asdf_enabled_feature gpg; then
       local gpg_sig_url
       gpg_sig_url="https://downloads.apache.org/maven/maven-{major_version}/{version}/binaries/apache-maven-{version}-bin.tar.gz.asc"
-      gpg_sig_url="$(kc_asdf_template "$gpg_sig_url" "${vars[@]}")"
+      [ -n "$gpg_sig_url" ] &&
+        gpg_sig_url="$(kc_asdf_template "$gpg_sig_url" "${vars[@]}")"
       kc_asdf_step "gpg" "$tmpfile" \
         kc_asdf_gpg "$tmppath" "$gpg_sig_url" ||
         return 1
@@ -110,8 +112,8 @@ __asdf_bin() {
       internal_path=""
       [ -n "$internal_path" ] &&
         internal_path="$(kc_asdf_template "$internal_path" "${vars[@]}")"
-      kc_asdf_debug "$ns" "extracting '%s' to '%s'" \
-        "$tmppath" "$outpath"
+      kc_asdf_debug "$ns" "extracting '%s' to '%s' (%s)" \
+        "$tmppath" "$outpath" "$internal_path"
       kc_asdf_step "extract" "$outpath" \
         kc_asdf_archive_extract "$tmppath" "$outpath" "$internal_path" ||
         return 1
