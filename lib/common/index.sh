@@ -29,4 +29,4 @@ source "${KC_ASDF_PLUGIN_PATH:?}/lib/common/internal.sh" || exit 1
 # shellcheck source-path=SCRIPTDIR/defaults.sh
 source "${KC_ASDF_PLUGIN_PATH:?}/lib/common/defaults.sh" || exit 1
 
-__asdf_requirement java
+kc_asdf_commands java
