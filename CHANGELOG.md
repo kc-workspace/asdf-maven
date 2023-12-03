@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/kc-workspace/asdf-maven/compare/v1.0.0...v1.0.1) (2023-12-03)
+
+
+### Improvements
+
+* update plugin from template [autocommit] ([3267152](https://github.com/kc-workspace/asdf-maven/commit/3267152fdef7a53ff81872949b41ccba759b68d3))
+
 ## 1.0.0 (2023-11-06)
 
 
