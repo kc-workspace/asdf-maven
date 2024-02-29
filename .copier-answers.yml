@@ -1,7 +1,7 @@
 ---
 ## Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: v2.3.0
-_src_path: gh:kc-workspace/asdf-plugin-template.git
+_commit: v2.3.1-9-gf4f83c0
+_src_path: /Users/kamontat/Desktop/Personal/asdf-plugin-template
 addon_yaml:
     archive: true
     checksum: true
@@ -26,20 +26,18 @@ archive_conf_path: ''
 archive_conf_strip: 1
 archive_enabled: true
 archive_regex: (\.tar\.gz|\.tgz|\.zip)$
-checksum_conf_algorithm: 512
-checksum_enabled: true
-checksum_url: https://downloads.apache.org/maven/maven-{major_version}/{version}/binaries/apache-maven-{version}-bin.tar.gz.sha512
+checksum_enabled: false
 custom_bin_paths: bin
 custom_non_stable_version: (-src|-dev|-latest|-stm|[-\.]rc|-alpha|-beta|[-\.]pre|-next|snapshot|master)
 custom_require_commands: java
-download_url: https://downloads.apache.org/maven/maven-{major_version}/{version}/binaries/apache-maven-{version}-bin.tar.gz
+download_url: https://archive.apache.org/dist/maven/maven-{major_version}/{version}/binaries/apache-maven-{version}-bin.tar.gz
 gpg_enabled: true
 gpg_public_key_email: ''
 gpg_public_key_fingerprint: 6A814B1F869C2BBEAB7CB7271A2A1C94BDE89688
 gpg_public_key_keyid: ''
 gpg_public_key_link: https://downloads.apache.org/maven/KEYS
 gpg_public_key_type: link
-gpg_sig_url: https://downloads.apache.org/maven/maven-{major_version}/{version}/binaries/apache-maven-{version}-bin.tar.gz.asc
+gpg_sig_url: https://archive.apache.org/dist/maven/maven-{major_version}/{version}/binaries/apache-maven-{version}-bin.tar.gz.asc
 install_map_enabled: false
 package_enabled: false
 plugin_author: Kamontat Chantrachirathumrong

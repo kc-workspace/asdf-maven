@@ -8,20 +8,11 @@
 ## Customization functions
 
 # kc_asdf_main() {
+#   local ns="$1"
+#   shift
+#
 #   return 0
 # }
-
-## Custom logic to update checksum file
-_kc_asdf_custom_checksum() {
-  ## create function (create "<filename>" "[<checksum>]")
-  local create="$1"
-  ## filename is app file to check
-  local filename="$2"
-  ## checksum_tmp is a raw checksum file from url
-  local checksum_tmp="$3"
-
-  "$create" "$filename" "$(cat "$checksum_tmp")"
-}
 
 ## -----------------------
 

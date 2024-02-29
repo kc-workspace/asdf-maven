@@ -8,6 +8,9 @@
 ## Customization functions
 
 # kc_asdf_main() {
+#   local ns="$1"
+#   shift
+#
 #   return 0
 # }
 
