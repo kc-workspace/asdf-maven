@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.1](https://github.com/kc-workspace/asdf-maven/compare/v1.0.0...v1.0.1) (2024-03-04)
+
+
+### Performance Improvements
+
+* update plugin from template [autocommit] ([5d34a22](https://github.com/kc-workspace/asdf-maven/commit/5d34a229745cea581e40f62affe86cec804a03ae))
+* update plugin from template [autocommit] ([2a18918](https://github.com/kc-workspace/asdf-maven/commit/2a189183264427f1a7bd9645d66b5eb2709fbcaf))
+* update plugin from template [autocommit] ([9ceebb9](https://github.com/kc-workspace/asdf-maven/commit/9ceebb979b6637771a896baf9afcb5b4d183c40a))
+* update plugin from template [autocommit] ([1dc65f5](https://github.com/kc-workspace/asdf-maven/commit/1dc65f5ac7e4bc00ca05d25ca3e86d167a717da3))
+* update plugin from template [autocommit] ([3267152](https://github.com/kc-workspace/asdf-maven/commit/3267152fdef7a53ff81872949b41ccba759b68d3))
+
 ## 1.0.0 (2023-11-06)
 
 
